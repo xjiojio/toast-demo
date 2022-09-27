@@ -1,0 +1,69 @@
+{
+  "name": "vite-demo",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vue-tsc/bin/vue-tsc.js --noEmit && node node_modules/vite/bin/vite.js build",
+    "build:dev": "node node_modules/vue-tsc/bin/vue-tsc.js --noEmit && node node_modules/vite/bin/vite.js build --mode dev",
+    "serve": "node node_modules/vite/bin/vite.js preview",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@nutui/nutui": "^3.2.1",
+    "axios": "^0.27.2",
+    "html2canvas": "^1.4.1",
+    "pinia": "^2.0.21",
+    "swiper": "^8.3.2",
+    "vue": "^3.2.16",
+    "vue-router": "^4.1.3"
+  },
+  "devDependencies": {
+    "@amap/amap-jsapi-types": "^0.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "@vitejs/plugin-vue": "^1.9.2",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "autoprefixer": "^10.4.8",
+    "consola": "^2.15.3",
+    "dart-sass": "^1.25.0",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mrm": "^4.1.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^2.7.1",
+    "sass-loader": "^13.0.2",
+    "scss": "^0.2.4",
+    "typescript": "^4.4.3",
+    "vconsole": "^3.14.6",
+    "vite": "^2.6.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-vconsole": "^1.2.2",
+    "vue-tsc": "^0.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint",
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
